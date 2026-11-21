@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kentaro Maeda — Video Editor</title>
+<meta name="description" content="Kentaro Maeda, video editor in Kamakura, Japan. Live action, motion, and AI-assisted pipelines that turn one script into every format.">
+<meta property="og:title" content="Kentaro Maeda — Video Editor">
+<meta property="og:description" content="Live action, motion, and AI-assisted pipelines that turn one script into every format.">
+<meta property="og:image" content="https://maeken313.github.io/media/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F2EC; --ink:#151515; --soft:#5E5A53; --line:#DED8CD; --card:#FFFDF9; --accent:#2E6B4F;
+    --w:1180px; --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-underline-offset:3px}
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+  header{position:sticky;top:0;z-index:5;background:rgba(245,242,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:600;letter-spacing:-.01em;text-decoration:none}
+  nav a{margin-left:26px;text-decoration:none;color:var(--soft);font-weight:500;font-size:15px}
+  nav a:hover{color:var(--ink)}
+  .mono{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .hero{padding:96px 0 64px}
+  .hero h1{font:400 clamp(44px,7vw,92px)/1.02 "Instrument Serif",serif;letter-spacing:-.02em;margin:18px 0 28px;max-width:15ch}
+  .hero h1 em{color:var(--accent)}
+  .hero p{max-width:58ch;font-size:19px;color:var(--soft);margin:0}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--soft)}
+  section.work{padding:56px 0;border-top:1px solid var(--line)}
+  .head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+  .head h2{font:400 clamp(32px,4vw,48px)/1.08 "Instrument Serif",serif;margin:8px 0 0;letter-spacing:-.01em}
+  .head .links a{margin-left:18px;font-weight:600;font-size:15px}
+  video{display:block;width:100%;border-radius:var(--r);background:#111;box-shadow:0 18px 50px -24px rgba(0,0,0,.35)}
+  .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:36px;align-items:start}
+  .notes h3{font-size:15px;margin:0 0 10px;font-weight:600}
+  .notes ul{margin:0;padding-left:18px;color:var(--soft)} .notes li{margin:0 0 8px}
+  .meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;margin:0 0 22px}
+  .meta dt{color:var(--soft)} .meta dd{margin:0}
+  .pair{display:grid;grid-template-columns:.42fr 1fr;gap:28px;margin-top:28px;align-items:start}
+  .cap{font-size:14px;color:var(--soft);margin-top:10px}
+  .stat{display:flex;gap:34px;flex-wrap:wrap;margin:6px 0 18px}
+  .stat b{display:block;font:400 44px/1 "Instrument Serif",serif;color:var(--ink)}
+  .stat span{font-size:13px;color:var(--soft)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .steps div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+  .steps div::before{counter-increment:s;content:"0" counter(s);font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+  .steps h3{margin:8px 0 6px;font-size:17px} .steps p{margin:0;font-size:15px;color:var(--soft)}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .about p{margin:0 0 14px}
+  .xp{font-size:15px} .xp div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}
+  .xp span{color:var(--soft);white-space:nowrap}
+  footer{padding:64px 0 80px;border-top:1px solid var(--line)}
+  footer h2{font:400 clamp(36px,5vw,64px)/1.05 "Instrument Serif",serif;margin:0 0 18px}
+  .btn{display:inline-block;background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;margin:6px 10px 0 0}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .fine{margin-top:40px;font-size:13px;color:var(--soft)}
+  @media (max-width:860px){
+    .grid,.pair,.about{grid-template-columns:1fr} .steps{grid-template-columns:1fr 1fr}
+    nav a:not(:last-child){display:none} .hero{padding:64px 0 40px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#top">Kentaro Maeda</a>
+  <nav><a href="#work">Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="mono">Video editor · Kamakura, Japan</div>
+    <h1>I cut for <em>timing</em>, and build the tools that make it fast.</h1>
+    <p>Live action, motion and short-form. Five years producing client videos end to end, twenty years on stage as a dancer, and AI-assisted pipelines that turn one script into every format.</p>
+    <div class="facts">
+      <span class="chip">Remote · JST (UTC+9)</span>
+      <span class="chip">DaVinci Resolve · Remotion · Python</span>
+      <span class="chip">Japanese · English · French</span>
+    </div>
+  </div>
+
+  <section class="work" id="work"><div class="wrap">
+    <div class="head">
+      <div><div class="mono">01 · Developer explainer · spec piece</div><h2>Why one database hits a wall</h2></div>
+      <div class="links"><a href="https://github.com/Maeken313/sharding-explainer">Source on GitHub ↗</a></div>
+    </div>
+    <div class="grid">
+      <video src="media/explainer.mp4" poster="media/explainer.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>Format</dt><dd>66 s, 16:9 · 35 s vertical cut · 2 thumbnails</dd>
+          <dt>Role</dt><dd>Script, motion, sound, edit</dd>
+          <dt>Built with</dt><dd>Remotion, Kokoro TTS, Whisper, Python, Claude</dd>
+          <dt>Speed</dt><dd>First full cut in ~40 min. One script line changed, re-voiced and re-timed in 2 min 26 s</dd>
+        </dl>
+        <h3>Decisions</h3>
+        <ul>
+          <li>Subject on screen in the first second: “1 database.” A frame check caught it arriving at 2.2 s, so I moved it.</li>
+          <li>Picture and sound read one cue sheet, so the database splits on the word “split”, with the sound.</li>
+          <li>Narration is re-transcribed by Whisper to catch mispronunciations and to time captions word by word.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pair">
+      <div><video src="media/short.mp4" poster="media/short.jpg" controls preload="metadata" playsinline></video><div class="cap">Vertical cut, generated from the same source.</div></div>
+      <div><video src="media/making-of.mp4" poster="media/making-of.jpg" controls preload="metadata" playsinline></video><div class="cap">Making-of: the pipeline, one-line change before/after, machine QA, fixes caught on stills.</div></div>
+    </div>
+    <p class="fine">Spec piece made for this portfolio. Not affiliated with or endorsed by PlanetScale.</p>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">02 · Live action · travel vlog</div><h2>Mt. Daruma, Izu</h2></div></div>
+    <div class="grid">
+      <video src="media/mt-daruma.mp4" poster="media/mt-daruma.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>Format</dt><dd>55 s, 16:9, English subtitles from French dialogue</dd>
+          <dt>Source</dt><dd>35 min of handheld footage from one day</dd>
+          <dt>Role</dt><dd>Shot (with my wife), story, edit, sound, score</dd>
+        </dl>
+        <h3>What stayed, what went</h3>
+        <ul>
+          <li>Built around one honest line: after a year in Japan, she needed a reset. Everything else serves it.</li>
+          <li>Cold open on the payoff (“It’s like a movie.”), closed on its echo at sunset.</li>
+          <li>L-cuts carry her monologue over the climb, hiding the jump cuts.</li>
+          <li>Score written to length: its last chord lands on the final shot and fades out with the picture.</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">03 · Brand motion · YouTube intro</div><h2>Maison Uchi</h2></div></div>
+    <div class="grid">
+      <video src="media/maison-uchi-intro.mp4" poster="media/maison-uchi-intro.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>Format</dt><dd>11 s intro + 12 s version that dissolves into the first shot (ProRes 4444 with alpha)</dd>
+          <dt>Role</dt><dd>Design, animation, score</dd>
+        </dl>
+        <ul>
+          <li>Drawn in the channel’s own art direction: shin-hanga prints meet 1930s French travel posters.</li>
+          <li>Introduces the three of us on the beat, then lands the title on the final chord.</li>
+          <li>Music is composed to the exact length, so nothing is cut off at the end.</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">04 · Short-form · Instagram</div><h2>Shot and edited every night</h2></div>
+      <div class="links"><a href="https://www.instagram.com/reel/Df1hwITMc5n/">Watch the reel ↗</a></div></div>
+    <div class="card">
+      <div class="stat">
+        <div><b>200K</b><span>views</span></div>
+        <div><b>17.6%</b><span>skip rate</span></div>
+        <div><b>340</b><span>saves</span></div>
+      </div>
+      <p style="margin:0;color:var(--soft)">Short videos of daily life as a French–Japanese couple, filmed and edited by me, with my wife on camera. The skip rate is the number I watch: it says whether the first second earns the rest.</p>
+    </div>
+  </div></section>
+
+  <section class="work" id="process"><div class="wrap">
+    <div class="head"><div><div class="mono">How I work</div><h2>AI does the repetition. I make the calls.</h2></div></div>
+    <div class="steps">
+      <div><h3>Story first</h3><p>Find the one line or image the piece is about, and cut toward it.</p></div>
+      <div><h3>Rough cut fast</h3><p>Transcribe everything, pull selects and timings by script, assemble in minutes.</p></div>
+      <div><h3>Taste pass</h3><p>Pacing, what to cut, where to breathe, sound. This part stays human.</p></div>
+      <div><h3>Check by machine</h3><p>Contact sheets of key frames, loudness, and speech checks before anything ships.</p></div>
+    </div>
+  </div></section>
+
+  <section class="work" id="about"><div class="wrap about">
+    <div>
+      <div class="mono">About</div>
+      <h2 style="font:400 clamp(32px,4vw,48px)/1.08 'Instrument Serif',serif;margin:8px 0 18px">Kentaro Maeda</h2>
+      <p>I’m a video editor in Kamakura, Japan. I spent five years producing client videos from concept to delivery: events, restaurants, outdoor gear, artists and business owners. One of them passed a million views.</p>
+      <p>I’ve been a dancer and performer for twenty years, on stages from festivals in Japan to the streets of Cambodia. That is where my sense of timing comes from.</p>
+      <p>Today I run a YouTube channel with my wife in French and Japanese, and I build my own tools with Claude, Remotion and Python.</p>
+    </div>
+    <div class="xp">
+      <div><b>Freelance video producer &amp; editor</b><span>2020–2024</span></div>
+      <div><b>Photographer &amp; videographer, nursery school</b><span>2016–2018</span></div>
+      <div><b>Dancer &amp; performer · Special Award, Moonwalk World Championship</b><span>2025</span></div>
+      <div><b>Maison Uchi, YouTube (FR/JP), co-creator &amp; editor</b><span>2026–</span></div>
+      <div><b>Kurume University, Dept. of Information Society</b><span></span></div>
+      <p style="margin-top:18px"><a class="btn ghost" href="media/Kentaro_Maeda_Resume.pdf">Resume (PDF)</a></p>
+    </div>
+  </div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <h2>Let’s make something people watch to the end.</h2>
+  <a class="btn" href="mailto:ken.popopop@gmail.com">ken.popopop@gmail.com</a>
+  <a class="btn ghost" href="https://github.com/Maeken313">GitHub</a>
+  <a class="btn ghost" href="https://www.instagram.com/maeken_313/">Instagram</a>
+  <p class="fine">© 2026 Kentaro Maeda. Work 01 is a spec piece, not affiliated with PlanetScale.</p>
+</div></footer>
+</body>
+</html>
