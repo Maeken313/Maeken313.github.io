@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+{{alternates}}
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{desc}}">
+<meta property="og:image" content="https://maeken313.github.io/media/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500{{extra_fonts}}&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F2EC; --ink:#151515; --soft:#5E5A53; --line:#DED8CD; --card:#FFFDF9; --accent:#2E6B4F;
+    --w:1180px; --r:14px;
+    --sans:"Inter Tight",system-ui,sans-serif; --serif:"Instrument Serif",serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-underline-offset:3px}
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+  header{position:sticky;top:0;z-index:5;background:rgba(245,242,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:600;letter-spacing:-.01em;text-decoration:none}
+  nav a{margin-left:26px;text-decoration:none;color:var(--soft);font-weight:500;font-size:15px}
+  nav a:hover{color:var(--ink)}
+  .mono{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .hero{padding-top:96px;padding-bottom:64px}
+  .hero h1{font:400 clamp(44px,7vw,92px)/1.02 var(--serif);letter-spacing:-.02em;margin:18px 0 28px;max-width:15ch}
+  .hero h1 em{color:var(--accent)}
+  .hero p{max-width:58ch;font-size:19px;color:var(--soft);margin:0}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--soft)}
+  section.work{padding:56px 0;border-top:1px solid var(--line)}
+  .head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+  .head h2{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:8px 0 0;letter-spacing:-.01em}
+  .head .links a{margin-left:18px;font-weight:600;font-size:15px}
+  video{display:block;width:100%;border-radius:var(--r);background:#111;box-shadow:0 18px 50px -24px rgba(0,0,0,.35)}
+  .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:36px;align-items:start}
+  .notes h3{font-size:15px;margin:0 0 10px;font-weight:600}
+  .notes ul{margin:0;padding-left:18px;color:var(--soft)} .notes li{margin:0 0 8px}
+  .meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;margin:0 0 22px}
+  .meta dt{color:var(--soft)} .meta dd{margin:0}
+  .pair{display:grid;grid-template-columns:.42fr 1fr;gap:28px;margin-top:28px;align-items:start}
+  .cap{font-size:14px;color:var(--soft);margin-top:10px}
+  .stat{display:flex;gap:34px;flex-wrap:wrap;margin:6px 0 18px}
+  .stat b{display:block;font:400 44px/1 var(--serif);color:var(--ink)}
+  .stat span{font-size:13px;color:var(--soft)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .steps div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+  .steps div::before{counter-increment:s;content:"0" counter(s);font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+  .steps h3{margin:8px 0 6px;font-size:17px} .steps p{margin:0;font-size:15px;color:var(--soft)}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .about p{margin:0 0 14px}
+  .xp{font-size:15px} .xp div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}
+  .xp span{color:var(--soft);white-space:nowrap}
+  footer{padding:64px 0 80px;border-top:1px solid var(--line)}
+  footer h2{font:400 clamp(36px,5vw,64px)/1.05 var(--serif);margin:0 0 18px}
+  .btn{display:inline-block;background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;margin:6px 10px 0 0}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .fine{margin-top:40px;font-size:13px;color:var(--soft)}
+  .right{display:flex;align-items:center}
+  .lang{margin-left:26px;display:flex;gap:2px;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:2px}
+  .lang a{text-decoration:none;color:var(--soft);padding:3px 10px;border-radius:999px;font-weight:500}
+  .lang a[aria-current]{background:var(--ink);color:var(--bg)}
+  .vnote{font-size:14px;color:var(--soft);margin:6px 0 0}
+  .abh{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:8px 0 18px}
+{{lang_css}}
+  @media (max-width:860px){
+    .grid,.pair,.about{grid-template-columns:1fr} .steps{grid-template-columns:1fr 1fr}
+    nav{display:none} .lang{margin-left:0} .hero{padding-top:64px;padding-bottom:40px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#top">{{brand}}</a>
+  <div class="right"><nav><a href="#work">{{nav_work}}</a><a href="#process">{{nav_process}}</a><a href="#about">{{nav_about}}</a><a href="#contact">{{nav_contact}}</a></nav>{{switcher}}</div>
+</div></header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="mono">{{kicker}}</div>
+    <h1>{{h1}}</h1>
+    <p>{{lead}}</p>
+    <div class="facts">
+      <span class="chip">{{chip1}}</span>
+      <span class="chip">{{chip2}}</span>
+      <span class="chip">{{chip3}}</span>
+    </div>
+  </div>
+
+  <section class="work" id="work"><div class="wrap">
+    <div class="head">
+      <div><div class="mono">{{w1_kicker}}</div><h2>{{w1_title}}</h2>{{w1_note_html}}</div>
+      <div class="links"><a href="https://github.com/Maeken313/sharding-explainer">{{source}}</a></div>
+    </div>
+    <div class="grid">
+      <video src="{{P}}media/explainer.mp4" poster="{{P}}media/explainer.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>{{k_format}}</dt><dd>{{w1_format}}</dd>
+          <dt>{{k_role}}</dt><dd>{{w1_role}}</dd>
+          <dt>{{k_built}}</dt><dd>{{w1_built}}</dd>
+          <dt>{{k_speed}}</dt><dd>{{w1_speed}}</dd>
+        </dl>
+        <h3>{{decisions}}</h3>
+        <ul>
+          <li>{{w1_d1}}</li>
+          <li>{{w1_d2}}</li>
+          <li>{{w1_d3}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pair">
+      <div><video src="{{P}}media/short.mp4" poster="{{P}}media/short.jpg" controls preload="metadata" playsinline></video><div class="cap">{{cap_short}}</div></div>
+      <div><video src="{{P}}media/making-of.mp4" poster="{{P}}media/making-of.jpg" controls preload="metadata" playsinline></video><div class="cap">{{cap_making}}</div></div>
+    </div>
+    <p class="fine">{{spec}}</p>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">{{w2_kicker}}</div><h2>{{w2_title}}</h2></div></div>
+    <div class="grid">
+      <video src="{{P}}media/mt-daruma.mp4" poster="{{P}}media/mt-daruma.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>{{k_format}}</dt><dd>{{w2_format}}</dd>
+          <dt>{{k_source}}</dt><dd>{{w2_source}}</dd>
+          <dt>{{k_role}}</dt><dd>{{w2_role}}</dd>
+        </dl>
+        <h3>{{w2_h}}</h3>
+        <ul>
+          <li>{{w2_b1}}</li>
+          <li>{{w2_b2}}</li>
+          <li>{{w2_b3}}</li>
+          <li>{{w2_b4}}</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">{{w3_kicker}}</div><h2>{{w3_title}}</h2></div></div>
+    <div class="grid">
+      <video src="{{P}}media/maison-uchi-intro.mp4" poster="{{P}}media/maison-uchi-intro.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>{{k_format}}</dt><dd>{{w3_format}}</dd>
+          <dt>{{k_role}}</dt><dd>{{w3_role}}</dd>
+        </dl>
+        <ul>
+          <li>{{w3_b1}}</li>
+          <li>{{w3_b2}}</li>
+          <li>{{w3_b3}}</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">{{w4_kicker}}</div><h2>{{w4_title}}</h2></div>
+      <div class="links"><a href="https://www.instagram.com/reel/Df1hwITMc5n/">{{w4_link}}</a></div></div>
+    <div class="card">
+      <div class="stat">
+        <div><b>200K</b><span>{{st_views}}</span></div>
+        <div><b>17.6%</b><span>{{st_skip}}</span></div>
+        <div><b>340</b><span>{{st_saves}}</span></div>
+      </div>
+      <p style="margin:0;color:var(--soft)">{{w4_p}}</p>
+    </div>
+  </div></section>
+
+  <section class="work" id="process"><div class="wrap">
+    <div class="head"><div><div class="mono">{{pr_kicker}}</div><h2>{{pr_title}}</h2></div></div>
+    <div class="steps">
+      <div><h3>{{p1h}}</h3><p>{{p1}}</p></div>
+      <div><h3>{{p2h}}</h3><p>{{p2}}</p></div>
+      <div><h3>{{p3h}}</h3><p>{{p3}}</p></div>
+      <div><h3>{{p4h}}</h3><p>{{p4}}</p></div>
+    </div>
+  </div></section>
+
+  <section class="work" id="about"><div class="wrap about">
+    <div>
+      <div class="mono">{{ab_kicker}}</div>
+      <h2 class="abh">{{ab_name}}</h2>
+      <p>{{ab1}}</p>
+      <p>{{ab2}}</p>
+      <p>{{ab3}}</p>
+    </div>
+    <div class="xp">
+      <div><b>{{x1}}</b><span>2020–2024</span></div>
+      <div><b>{{x2}}</b><span>{{present}}</span></div>
+      <div><b>{{x3}}</b><span>2016–2018</span></div>
+      <div><b>{{x4}}</b><span>2025</span></div>
+      <div><b>{{x5}}</b><span>2026–</span></div>
+      <div><b>{{x6}}</b><span></span></div>
+      <p style="margin-top:18px"><a class="btn ghost" href="{{P}}media/Kentaro_Maeda_Resume.pdf">{{resume}}</a></p>
+    </div>
+  </div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <h2>{{ft_h}}</h2>
+  <a class="btn" href="mailto:ken.popopop@gmail.com">ken.popopop@gmail.com</a>
+  <a class="btn ghost" href="https://github.com/Maeken313">GitHub</a>
+  <a class="btn ghost" href="https://www.instagram.com/maeken_313/">Instagram</a>
+  <p class="fine">{{ft_fine}}</p>
+</div></footer>
+</body>
+</html>

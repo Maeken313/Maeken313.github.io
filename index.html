@@ -5,8 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kentaro Maeda — Video Editor</title>
 <meta name="description" content="Kentaro Maeda, video editor in Kamakura, Japan. Live action, motion, and AI-assisted pipelines that turn one script into every format.">
+<link rel="alternate" hreflang="en" href="https://maeken313.github.io/">
+<link rel="alternate" hreflang="ja" href="https://maeken313.github.io/ja/">
+<link rel="alternate" hreflang="fr" href="https://maeken313.github.io/fr/">
+<link rel="alternate" hreflang="x-default" href="https://maeken313.github.io/">
+<link rel="canonical" href="https://maeken313.github.io/">
 <meta property="og:title" content="Kentaro Maeda — Video Editor">
-<meta property="og:description" content="Live action, motion, and AI-assisted pipelines that turn one script into every format.">
+<meta property="og:description" content="Kentaro Maeda, video editor in Kamakura, Japan. Live action, motion, and AI-assisted pipelines that turn one script into every format.">
 <meta property="og:image" content="https://maeken313.github.io/media/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +20,11 @@
   :root{
     --bg:#F5F2EC; --ink:#151515; --soft:#5E5A53; --line:#DED8CD; --card:#FFFDF9; --accent:#2E6B4F;
     --w:1180px; --r:14px;
+    --sans:"Inter Tight",system-ui,sans-serif; --serif:"Instrument Serif",serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
   a{color:inherit;text-underline-offset:3px}
   .wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
   header{position:sticky;top:0;z-index:5;background:rgba(245,242,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -27,15 +33,15 @@
   nav a{margin-left:26px;text-decoration:none;color:var(--soft);font-weight:500;font-size:15px}
   nav a:hover{color:var(--ink)}
   .mono{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
-  .hero{padding:96px 0 64px}
-  .hero h1{font:400 clamp(44px,7vw,92px)/1.02 "Instrument Serif",serif;letter-spacing:-.02em;margin:18px 0 28px;max-width:15ch}
+  .hero{padding-top:96px;padding-bottom:64px}
+  .hero h1{font:400 clamp(44px,7vw,92px)/1.02 var(--serif);letter-spacing:-.02em;margin:18px 0 28px;max-width:15ch}
   .hero h1 em{color:var(--accent)}
   .hero p{max-width:58ch;font-size:19px;color:var(--soft);margin:0}
   .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
   .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--soft)}
   section.work{padding:56px 0;border-top:1px solid var(--line)}
   .head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:22px}
-  .head h2{font:400 clamp(32px,4vw,48px)/1.08 "Instrument Serif",serif;margin:8px 0 0;letter-spacing:-.01em}
+  .head h2{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:8px 0 0;letter-spacing:-.01em}
   .head .links a{margin-left:18px;font-weight:600;font-size:15px}
   video{display:block;width:100%;border-radius:var(--r);background:#111;box-shadow:0 18px 50px -24px rgba(0,0,0,.35)}
   .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:36px;align-items:start}
@@ -46,7 +52,7 @@
   .pair{display:grid;grid-template-columns:.42fr 1fr;gap:28px;margin-top:28px;align-items:start}
   .cap{font-size:14px;color:var(--soft);margin-top:10px}
   .stat{display:flex;gap:34px;flex-wrap:wrap;margin:6px 0 18px}
-  .stat b{display:block;font:400 44px/1 "Instrument Serif",serif;color:var(--ink)}
+  .stat b{display:block;font:400 44px/1 var(--serif);color:var(--ink)}
   .stat span{font-size:13px;color:var(--soft)}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
@@ -58,13 +64,20 @@
   .xp{font-size:15px} .xp div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}
   .xp span{color:var(--soft);white-space:nowrap}
   footer{padding:64px 0 80px;border-top:1px solid var(--line)}
-  footer h2{font:400 clamp(36px,5vw,64px)/1.05 "Instrument Serif",serif;margin:0 0 18px}
+  footer h2{font:400 clamp(36px,5vw,64px)/1.05 var(--serif);margin:0 0 18px}
   .btn{display:inline-block;background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;margin:6px 10px 0 0}
   .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
   .fine{margin-top:40px;font-size:13px;color:var(--soft)}
+  .right{display:flex;align-items:center}
+  .lang{margin-left:26px;display:flex;gap:2px;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:2px}
+  .lang a{text-decoration:none;color:var(--soft);padding:3px 10px;border-radius:999px;font-weight:500}
+  .lang a[aria-current]{background:var(--ink);color:var(--bg)}
+  .vnote{font-size:14px;color:var(--soft);margin:6px 0 0}
+  .abh{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:8px 0 18px}
+
   @media (max-width:860px){
     .grid,.pair,.about{grid-template-columns:1fr} .steps{grid-template-columns:1fr 1fr}
-    nav a:not(:last-child){display:none} .hero{padding:64px 0 40px}
+    nav{display:none} .lang{margin-left:0} .hero{padding-top:64px;padding-bottom:40px}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -72,7 +85,7 @@
 <body>
 <header><div class="wrap">
   <a class="brand" href="#top">Kentaro Maeda</a>
-  <nav><a href="#work">Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <div class="right"><nav><a href="#work">Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav><div class="lang" aria-label="Language"><a href="./" hreflang="en" lang="en" aria-current="page">EN</a><a href="ja/" hreflang="ja" lang="ja">日本語</a><a href="fr/" hreflang="fr" lang="fr">FR</a></div></div>
 </div></header>
 
 <main id="top">
@@ -103,7 +116,7 @@
         </dl>
         <h3>Decisions</h3>
         <ul>
-          <li>Subject on screen in the first second: “1 database.” A frame check caught it arriving at 2.2 s, so I moved it.</li>
+          <li>Subject on screen in the first second: “1 database.” A frame check caught it arriving at 2.2 s, so it moved to 0.45 s.</li>
           <li>Picture and sound read one cue sheet, so the database splits on the word “split”, with the sound.</li>
           <li>Narration is re-transcribed by Whisper to catch mispronunciations and to time captions word by word.</li>
         </ul>
@@ -111,27 +124,27 @@
     </div>
     <div class="pair">
       <div><video src="media/short.mp4" poster="media/short.jpg" controls preload="metadata" playsinline></video><div class="cap">Vertical cut, generated from the same source.</div></div>
-      <div><video src="media/making-of.mp4" poster="media/making-of.jpg" controls preload="metadata" playsinline></video><div class="cap">Making-of: the pipeline, one-line change before/after, machine QA, fixes caught on stills.</div></div>
+      <div><video src="media/making-of.mp4" poster="media/making-of.jpg" controls preload="metadata" playsinline></video><div class="cap">Making-of: the pipeline, a one-line change before/after, machine QA, fixes caught on stills.</div></div>
     </div>
     <p class="fine">Spec piece made for this portfolio. Not affiliated with or endorsed by PlanetScale.</p>
   </div></section>
 
   <section class="work"><div class="wrap">
-    <div class="head"><div><div class="mono">02 · Live action · travel vlog</div><h2>Mt. Daruma, Izu</h2></div></div>
+    <div class="head"><div><div class="mono">02 · Live action · an experiment in AI-first editing</div><h2>Mt. Daruma, Izu</h2></div></div>
     <div class="grid">
       <video src="media/mt-daruma.mp4" poster="media/mt-daruma.jpg" controls preload="metadata" playsinline></video>
       <div class="notes">
         <dl class="meta">
-          <dt>Format</dt><dd>55 s, 16:9, English subtitles from French dialogue</dd>
-          <dt>Source</dt><dd>35 min of handheld footage from one day</dd>
-          <dt>Role</dt><dd>Shot (with my wife), story, edit, sound, score</dd>
+          <dt>Format</dt><dd>65 s, 16:9, English subtitles from French</dd>
+          <dt>Source</dt><dd>35 min of handheld footage from one day, shot scenery-heavy on purpose</dd>
+          <dt>Role</dt><dd>Filmed with my wife. Cut by AI, with one fix by hand</dd>
         </dl>
-        <h3>What stayed, what went</h3>
+        <h3>What the test shows</h3>
         <ul>
-          <li>Built around one honest line: after a year in Japan, she needed a reset. Everything else serves it.</li>
-          <li>Cold open on the payoff (“It’s like a movie.”), closed on its echo at sunset.</li>
-          <li>L-cuts carry her monologue over the climb, hiding the jump cuts.</li>
-          <li>Score written to length: its last chord lands on the final shot and fades out with the picture.</li>
+          <li>I shot this trip with a lot of silent scenery on purpose, to see how an AI-first edit handles footage with no one talking.</li>
+          <li>Where there is speech, the AI cuts well: the monologue is trimmed to the word, carried over the climb with L-cuts.</li>
+          <li>Silent shots come out too short. The Mt. Fuji reveal gets 1.4 seconds. At the end, it kept the start and finish of a 360° spin and dropped the middle, so the view stood still on both sides of the cut.</li>
+          <li>My one fix: the spin now plays whole, and the film fades out on it. Everything else is the AI’s cut, left as is, and so is the full 14-minute episode on our channel, where I only lengthened a few views. How long a view breathes is still my call.</li>
         </ul>
       </div>
     </div>
@@ -143,13 +156,13 @@
       <video src="media/maison-uchi-intro.mp4" poster="media/maison-uchi-intro.jpg" controls preload="metadata" playsinline></video>
       <div class="notes">
         <dl class="meta">
-          <dt>Format</dt><dd>11 s intro + 12 s version that dissolves into the first shot (ProRes 4444 with alpha)</dd>
-          <dt>Role</dt><dd>Design, animation, score</dd>
+          <dt>Format</dt><dd>11 s intro + a 12 s version that dissolves into the first shot (ProRes 4444 with alpha)</dd>
+          <dt>Role</dt><dd>Art direction, animation, score</dd>
         </dl>
         <ul>
           <li>Drawn in the channel’s own art direction: shin-hanga prints meet 1930s French travel posters.</li>
           <li>Introduces the three of us on the beat, then lands the title on the final chord.</li>
-          <li>Music is composed to the exact length, so nothing is cut off at the end.</li>
+          <li>The music is composed to the exact length, so nothing is cut off at the end.</li>
         </ul>
       </div>
     </div>
@@ -181,7 +194,7 @@
   <section class="work" id="about"><div class="wrap about">
     <div>
       <div class="mono">About</div>
-      <h2 style="font:400 clamp(32px,4vw,48px)/1.08 'Instrument Serif',serif;margin:8px 0 18px">Kentaro Maeda</h2>
+      <h2 class="abh">Kentaro Maeda</h2>
       <p>I’m a video editor in Kamakura, Japan. I spent five years producing client videos from concept to delivery: events, restaurants, outdoor gear, artists and business owners. One of them passed a million views.</p>
       <p>I’ve been a dancer and performer for twenty years, on stages from festivals in Japan to the streets of Cambodia. That is where my sense of timing comes from. I also host a show on FM Shonan, a local radio station, which taught me what keeps a conversation moving.</p>
       <p>Today I run a YouTube channel with my wife in French and Japanese, and I build my own tools with Claude, Remotion and Python.</p>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kentaro Maeda — Monteur vidéo</title>
+<meta name="description" content="Kentaro Maeda, monteur vidéo à Kamakura. Prises de vue réelles, motion design et outils d’IA qui déclinent un seul script dans tous les formats.">
+<link rel="alternate" hreflang="en" href="https://maeken313.github.io/">
+<link rel="alternate" hreflang="ja" href="https://maeken313.github.io/ja/">
+<link rel="alternate" hreflang="fr" href="https://maeken313.github.io/fr/">
+<link rel="alternate" hreflang="x-default" href="https://maeken313.github.io/">
+<link rel="canonical" href="https://maeken313.github.io/fr/">
+<meta property="og:title" content="Kentaro Maeda — Monteur vidéo">
+<meta property="og:description" content="Kentaro Maeda, monteur vidéo à Kamakura. Prises de vue réelles, motion design et outils d’IA qui déclinent un seul script dans tous les formats.">
+<meta property="og:image" content="https://maeken313.github.io/media/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F2EC; --ink:#151515; --soft:#5E5A53; --line:#DED8CD; --card:#FFFDF9; --accent:#2E6B4F;
+    --w:1180px; --r:14px;
+    --sans:"Inter Tight",system-ui,sans-serif; --serif:"Instrument Serif",serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-underline-offset:3px}
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+  header{position:sticky;top:0;z-index:5;background:rgba(245,242,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:600;letter-spacing:-.01em;text-decoration:none}
+  nav a{margin-left:26px;text-decoration:none;color:var(--soft);font-weight:500;font-size:15px}
+  nav a:hover{color:var(--ink)}
+  .mono{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .hero{padding-top:96px;padding-bottom:64px}
+  .hero h1{font:400 clamp(44px,7vw,92px)/1.02 var(--serif);letter-spacing:-.02em;margin:18px 0 28px;max-width:15ch}
+  .hero h1 em{color:var(--accent)}
+  .hero p{max-width:58ch;font-size:19px;color:var(--soft);margin:0}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--soft)}
+  section.work{padding:56px 0;border-top:1px solid var(--line)}
+  .head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+  .head h2{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:8px 0 0;letter-spacing:-.01em}
+  .head .links a{margin-left:18px;font-weight:600;font-size:15px}
+  video{display:block;width:100%;border-radius:var(--r);background:#111;box-shadow:0 18px 50px -24px rgba(0,0,0,.35)}
+  .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:36px;align-items:start}
+  .notes h3{font-size:15px;margin:0 0 10px;font-weight:600}
+  .notes ul{margin:0;padding-left:18px;color:var(--soft)} .notes li{margin:0 0 8px}
+  .meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;margin:0 0 22px}
+  .meta dt{color:var(--soft)} .meta dd{margin:0}
+  .pair{display:grid;grid-template-columns:.42fr 1fr;gap:28px;margin-top:28px;align-items:start}
+  .cap{font-size:14px;color:var(--soft);margin-top:10px}
+  .stat{display:flex;gap:34px;flex-wrap:wrap;margin:6px 0 18px}
+  .stat b{display:block;font:400 44px/1 var(--serif);color:var(--ink)}
+  .stat span{font-size:13px;color:var(--soft)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .steps div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+  .steps div::before{counter-increment:s;content:"0" counter(s);font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+  .steps h3{margin:8px 0 6px;font-size:17px} .steps p{margin:0;font-size:15px;color:var(--soft)}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .about p{margin:0 0 14px}
+  .xp{font-size:15px} .xp div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}
+  .xp span{color:var(--soft);white-space:nowrap}
+  footer{padding:64px 0 80px;border-top:1px solid var(--line)}
+  footer h2{font:400 clamp(36px,5vw,64px)/1.05 var(--serif);margin:0 0 18px}
+  .btn{display:inline-block;background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;margin:6px 10px 0 0}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .fine{margin-top:40px;font-size:13px;color:var(--soft)}
+  .right{display:flex;align-items:center}
+  .lang{margin-left:26px;display:flex;gap:2px;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:2px}
+  .lang a{text-decoration:none;color:var(--soft);padding:3px 10px;border-radius:999px;font-weight:500}
+  .lang a[aria-current]{background:var(--ink);color:var(--bg)}
+  .vnote{font-size:14px;color:var(--soft);margin:6px 0 0}
+  .abh{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:8px 0 18px}
+  .hero h1{max-width:17ch}
+  @media (max-width:860px){
+    .grid,.pair,.about{grid-template-columns:1fr} .steps{grid-template-columns:1fr 1fr}
+    nav{display:none} .lang{margin-left:0} .hero{padding-top:64px;padding-bottom:40px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#top">Kentaro Maeda</a>
+  <div class="right"><nav><a href="#work">Projets</a><a href="#process">Méthode</a><a href="#about">Parcours</a><a href="#contact">Contact</a></nav><div class="lang" aria-label="Language"><a href="../" hreflang="en" lang="en">EN</a><a href="../ja/" hreflang="ja" lang="ja">日本語</a><a href="../fr/" hreflang="fr" lang="fr" aria-current="page">FR</a></div></div>
+</div></header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="mono">Monteur vidéo · Kamakura, Japon</div>
+    <h1>Je monte au <em>tempo</em>, et je construis les outils qui vont avec.</h1>
+    <p>Prises de vue réelles, motion design et formats courts. Cinq ans à produire des vidéos pour des clients de A à Z, vingt ans sur scène comme danseur, et des outils d’IA qui déclinent un seul script dans tous les formats.</p>
+    <div class="facts">
+      <span class="chip">À distance · JST (UTC+9)</span>
+      <span class="chip">DaVinci Resolve · Remotion · Python</span>
+      <span class="chip">Japonais · anglais · français</span>
+    </div>
+  </div>
+
+  <section class="work" id="work"><div class="wrap">
+    <div class="head">
+      <div><div class="mono">01 · Vidéo explicative tech · projet personnel</div><h2>Pourquoi une seule base de données finit par saturer</h2><p class="vnote">La vidéo est en anglais.</p></div>
+      <div class="links"><a href="https://github.com/Maeken313/sharding-explainer">Code source sur GitHub ↗</a></div>
+    </div>
+    <div class="grid">
+      <video src="../media/explainer.mp4" poster="../media/explainer.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>Format</dt><dd>66 s en 16:9 · version verticale de 35 s · 2 vignettes</dd>
+          <dt>Rôle</dt><dd>Script, animation, son, montage</dd>
+          <dt>Outils</dt><dd>Remotion, Kokoro TTS, Whisper, Python, Claude</dd>
+          <dt>Rapidité</dt><dd>Premier montage complet en ~40 min. Une ligne du script modifiée, revoisée et recalée en 2 min 26 s</dd>
+        </dl>
+        <h3>Choix</h3>
+        <ul>
+          <li>Le sujet à l’écran dès la première seconde : « 1 database. » Une vérification image par image l’a vu arriver à 2,2 s ; il passe à 0,45 s.</li>
+          <li>Image et son lisent la même feuille de repères : la base se divise sur le mot « split », avec le son.</li>
+          <li>La voix off est retranscrite par Whisper pour repérer les erreurs de prononciation et caler les sous-titres mot à mot.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pair">
+      <div><video src="../media/short.mp4" poster="../media/short.jpg" controls preload="metadata" playsinline></video><div class="cap">Version verticale, générée à partir de la même source.</div></div>
+      <div><video src="../media/making-of.mp4" poster="../media/making-of.jpg" controls preload="metadata" playsinline></video><div class="cap">Making-of : la chaîne de production, une ligne modifiée avant/après, le contrôle automatique, les corrections repérées image par image.</div></div>
+    </div>
+    <p class="fine">Projet personnel réalisé pour ce portfolio. Sans lien avec PlanetScale.</p>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">02 · Prises de vue réelles · une expérience de montage par l’IA</div><h2>Mont Daruma, Izu</h2></div></div>
+    <div class="grid">
+      <video src="../media/mt-daruma.mp4" poster="../media/mt-daruma.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>Format</dt><dd>65 s en 16:9, sous-titres anglais à partir du français</dd>
+          <dt>Rushes</dt><dd>35 min de rushes tournés en un jour, volontairement riches en paysages</dd>
+          <dt>Rôle</dt><dd>Filmé avec ma femme. Monté par l’IA, une seule correction à la main</dd>
+        </dl>
+        <h3>Ce que montre l’expérience</h3>
+        <ul>
+          <li>J’ai volontairement filmé beaucoup de paysages silencieux, pour voir comment un montage fait par l’IA traite des images où personne ne parle.</li>
+          <li>Là où l’on parle, l’IA coupe bien : le monologue est taillé au mot près et porté sur la montée par des coupes en L.</li>
+          <li>Les plans silencieux sont trop courts. L’apparition du mont Fuji dure 1,4 seconde. À la fin, elle avait gardé le début et la fin d’un tour à 360° en coupant le milieu : le paysage semblait figé des deux côtés de la coupe.</li>
+          <li>Ma seule correction : le tour se joue en entier, et le film s’éteint dessus. Tout le reste est le montage de l’IA, laissé tel quel, comme l’épisode complet de 14 minutes sur notre chaîne, où j’ai seulement rallongé quelques plans. Combien de temps laisser respirer un paysage, c’est encore moi qui le décide.</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">03 · Motion design de marque · générique YouTube</div><h2>Maison Uchi</h2></div></div>
+    <div class="grid">
+      <video src="../media/maison-uchi-intro.mp4" poster="../media/maison-uchi-intro.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>Format</dt><dd>Générique de 11 s + version de 12 s qui se fond dans le premier plan (ProRes 4444 avec alpha)</dd>
+          <dt>Rôle</dt><dd>Direction artistique, animation, musique</dd>
+        </dl>
+        <ul>
+          <li>Dessiné dans la direction artistique de la chaîne : l’estampe shin-hanga rencontre l’affiche de voyage française des années 1930.</li>
+          <li>Présente nous trois en rythme, puis pose le titre sur le dernier accord.</li>
+          <li>La musique est composée à la durée exacte : rien n’est coupé à la fin.</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">04 · Formats courts · Instagram</div><h2>Tourné et monté chaque soir</h2></div>
+      <div class="links"><a href="https://www.instagram.com/reel/Df1hwITMc5n/">Voir le reel ↗</a></div></div>
+    <div class="card">
+      <div class="stat">
+        <div><b>200K</b><span>vues</span></div>
+        <div><b>17.6%</b><span>taux de skip</span></div>
+        <div><b>340</b><span>enregistrements</span></div>
+      </div>
+      <p style="margin:0;color:var(--soft)">Des vidéos courtes sur notre quotidien de couple franco-japonais, filmées et montées par moi, avec ma femme à l’écran. Le chiffre que je surveille, c’est le taux de skip : il dit si la première seconde donne envie de voir la suite.</p>
+    </div>
+  </div></section>
+
+  <section class="work" id="process"><div class="wrap">
+    <div class="head"><div><div class="mono">Ma méthode</div><h2>L’IA fait la répétition. Je fais les choix.</h2></div></div>
+    <div class="steps">
+      <div><h3>L’histoire d’abord</h3><p>Trouver la phrase ou l’image qui porte le film, et monter vers elle.</p></div>
+      <div><h3>Prémontage rapide</h3><p>Tout retranscrire, choisir les plans et les timings depuis le script, assembler en quelques minutes.</p></div>
+      <div><h3>La touche finale</h3><p>Combien de temps laisser respirer un plan muet, quoi couper, le rythme entre les répliques. L’IA coupe bien sur la parole ; cette partie reste la mienne.</p></div>
+      <div><h3>Contrôle automatique</h3><p>Planches d’images clés, niveau sonore et intelligibilité vérifiés avant toute livraison.</p></div>
+    </div>
+  </div></section>
+
+  <section class="work" id="about"><div class="wrap about">
+    <div>
+      <div class="mono">Parcours</div>
+      <h2 class="abh">Kentaro Maeda</h2>
+      <p>Je suis monteur vidéo à Kamakura. Pendant cinq ans, j’ai produit des vidéos pour des clients, de l’idée à la livraison : événements, restaurants, matériel de plein air, portraits d’artistes et de chefs d’entreprise. L’une d’elles a dépassé le million de vues.</p>
+      <p>Je danse et je suis sur scène depuis vingt ans, des festivals japonais aux rues du Cambodge. C’est de là que vient mon sens du rythme. J’anime aussi une émission sur FM Shonan, une radio locale, qui m’a appris ce qui fait avancer une conversation.</p>
+      <p>Aujourd’hui, je tiens avec ma femme une chaîne YouTube en français et en japonais, et je fabrique mes propres outils avec Claude, Remotion et Python.</p>
+    </div>
+    <div class="xp">
+      <div><b>Réalisateur-monteur indépendant</b><span>2020–2024</span></div>
+      <div><b>Animateur radio, FM Shonan</b><span>en cours</span></div>
+      <div><b>Photographe et vidéaste, crèche</b><span>2016–2018</span></div>
+      <div><b>Danseur · prix spécial, championnat du monde de moonwalk</b><span>2025</span></div>
+      <div><b>Maison Uchi, YouTube (FR/JP), co-créateur et monteur</b><span>2026–</span></div>
+      <div><b>Université de Kurume, département Société de l’information</b><span></span></div>
+      <p style="margin-top:18px"><a class="btn ghost" href="../media/Kentaro_Maeda_Resume.pdf">CV en anglais (PDF)</a></p>
+    </div>
+  </div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <h2>Faisons des vidéos qu’on regarde jusqu’au bout.</h2>
+  <a class="btn" href="mailto:ken.popopop@gmail.com">ken.popopop@gmail.com</a>
+  <a class="btn ghost" href="https://github.com/Maeken313">GitHub</a>
+  <a class="btn ghost" href="https://www.instagram.com/maeken_313/">Instagram</a>
+  <p class="fine">© 2026 Kentaro Maeda. Le projet 01 est personnel et sans lien avec PlanetScale.</p>
+</div></footer>
+</body>
+</html>

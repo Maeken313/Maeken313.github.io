@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>前田健太郎 — 映像編集</title>
+<meta name="description" content="鎌倉の映像編集者、前田健太郎。実写・モーション、そして台本1枚からすべての形式を書き出すAIのワークフロー。">
+<link rel="alternate" hreflang="en" href="https://maeken313.github.io/">
+<link rel="alternate" hreflang="ja" href="https://maeken313.github.io/ja/">
+<link rel="alternate" hreflang="fr" href="https://maeken313.github.io/fr/">
+<link rel="alternate" hreflang="x-default" href="https://maeken313.github.io/">
+<link rel="canonical" href="https://maeken313.github.io/ja/">
+<meta property="og:title" content="前田健太郎 — 映像編集">
+<meta property="og:description" content="鎌倉の映像編集者、前田健太郎。実写・モーション、そして台本1枚からすべての形式を書き出すAIのワークフロー。">
+<meta property="og:image" content="https://maeken313.github.io/media/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&family=Zen+Old+Mincho:wght@600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F2EC; --ink:#151515; --soft:#5E5A53; --line:#DED8CD; --card:#FFFDF9; --accent:#2E6B4F;
+    --w:1180px; --r:14px;
+    --sans:"Inter Tight",system-ui,sans-serif; --serif:"Instrument Serif",serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-underline-offset:3px}
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+  header{position:sticky;top:0;z-index:5;background:rgba(245,242,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:600;letter-spacing:-.01em;text-decoration:none}
+  nav a{margin-left:26px;text-decoration:none;color:var(--soft);font-weight:500;font-size:15px}
+  nav a:hover{color:var(--ink)}
+  .mono{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .hero{padding-top:96px;padding-bottom:64px}
+  .hero h1{font:400 clamp(44px,7vw,92px)/1.02 var(--serif);letter-spacing:-.02em;margin:18px 0 28px;max-width:15ch}
+  .hero h1 em{color:var(--accent)}
+  .hero p{max-width:58ch;font-size:19px;color:var(--soft);margin:0}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--soft)}
+  section.work{padding:56px 0;border-top:1px solid var(--line)}
+  .head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+  .head h2{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:8px 0 0;letter-spacing:-.01em}
+  .head .links a{margin-left:18px;font-weight:600;font-size:15px}
+  video{display:block;width:100%;border-radius:var(--r);background:#111;box-shadow:0 18px 50px -24px rgba(0,0,0,.35)}
+  .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:36px;align-items:start}
+  .notes h3{font-size:15px;margin:0 0 10px;font-weight:600}
+  .notes ul{margin:0;padding-left:18px;color:var(--soft)} .notes li{margin:0 0 8px}
+  .meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;margin:0 0 22px}
+  .meta dt{color:var(--soft)} .meta dd{margin:0}
+  .pair{display:grid;grid-template-columns:.42fr 1fr;gap:28px;margin-top:28px;align-items:start}
+  .cap{font-size:14px;color:var(--soft);margin-top:10px}
+  .stat{display:flex;gap:34px;flex-wrap:wrap;margin:6px 0 18px}
+  .stat b{display:block;font:400 44px/1 var(--serif);color:var(--ink)}
+  .stat span{font-size:13px;color:var(--soft)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .steps div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+  .steps div::before{counter-increment:s;content:"0" counter(s);font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+  .steps h3{margin:8px 0 6px;font-size:17px} .steps p{margin:0;font-size:15px;color:var(--soft)}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .about p{margin:0 0 14px}
+  .xp{font-size:15px} .xp div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}
+  .xp span{color:var(--soft);white-space:nowrap}
+  footer{padding:64px 0 80px;border-top:1px solid var(--line)}
+  footer h2{font:400 clamp(36px,5vw,64px)/1.05 var(--serif);margin:0 0 18px}
+  .btn{display:inline-block;background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;margin:6px 10px 0 0}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .fine{margin-top:40px;font-size:13px;color:var(--soft)}
+  .right{display:flex;align-items:center}
+  .lang{margin-left:26px;display:flex;gap:2px;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:2px}
+  .lang a{text-decoration:none;color:var(--soft);padding:3px 10px;border-radius:999px;font-weight:500}
+  .lang a[aria-current]{background:var(--ink);color:var(--bg)}
+  .vnote{font-size:14px;color:var(--soft);margin:6px 0 0}
+  .abh{font:400 clamp(32px,4vw,48px)/1.08 var(--serif);margin:8px 0 18px}
+  :root{--sans:"Inter Tight","Noto Sans JP",system-ui,sans-serif; --serif:"Instrument Serif","Zen Old Mincho",serif}
+  body{font-size:16px;line-height:1.85;letter-spacing:.02em;word-break:auto-phrase}
+  .hero h1{font-family:"Zen Old Mincho",serif;font-weight:600;font-size:clamp(36px,5.4vw,68px);line-height:1.3;letter-spacing:.02em;max-width:none}
+  .hero h1 em{font-style:normal}
+  .head h2,.abh,footer h2{font-family:"Zen Old Mincho",serif;font-weight:600;letter-spacing:.02em;line-height:1.35}
+  .head h2,.abh{font-size:clamp(26px,3.2vw,38px)} footer h2{font-size:clamp(28px,4vw,48px)}
+  .mono{text-transform:none;letter-spacing:.04em}
+  .notes li,.steps p,.about p{line-break:strict}
+  @media (max-width:860px){
+    .grid,.pair,.about{grid-template-columns:1fr} .steps{grid-template-columns:1fr 1fr}
+    nav{display:none} .lang{margin-left:0} .hero{padding-top:64px;padding-bottom:40px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#top">前田健太郎</a>
+  <div class="right"><nav><a href="#work">作品</a><a href="#process">進め方</a><a href="#about">経歴</a><a href="#contact">連絡先</a></nav><div class="lang" aria-label="Language"><a href="../" hreflang="en" lang="en">EN</a><a href="../ja/" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="../fr/" hreflang="fr" lang="fr">FR</a></div></div>
+</div></header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="mono">映像編集 · 神奈川県鎌倉市</div>
+    <h1><em>間</em>で切る。<br>そのための道具も、<br>自分でつくる。</h1>
+    <p>実写、モーション、ショート動画。企業のPR映像を企画から納品まで5年、ダンサーとして舞台に立って20年。台本1枚から全部の形式を書き出す、AIを使った制作の仕組みも自分で組んでいます。</p>
+    <div class="facts">
+      <span class="chip">リモート · 日本時間</span>
+      <span class="chip">DaVinci Resolve · Remotion · Python</span>
+      <span class="chip">日本語 · 英語 · フランス語</span>
+    </div>
+  </div>
+
+  <section class="work" id="work"><div class="wrap">
+    <div class="head">
+      <div><div class="mono">01 · 技術解説動画 · 自主制作</div><h2>なぜ1台のデータベースは限界を迎えるのか</h2><p class="vnote">動画は英語です。</p></div>
+      <div class="links"><a href="https://github.com/Maeken313/sharding-explainer">GitHubでコードを見る ↗</a></div>
+    </div>
+    <div class="grid">
+      <video src="../media/explainer.mp4" poster="../media/explainer.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>形式</dt><dd>66秒・横 · 35秒の縦型 · サムネイル2案</dd>
+          <dt>担当</dt><dd>台本・動き・音・編集</dd>
+          <dt>使った道具</dt><dd>Remotion、Kokoro TTS、Whisper、Python、Claude</dd>
+          <dt>速さ</dt><dd>初稿まで約40分。台本1行の変更から、声・字幕・タイミングの作り直しまで2分26秒</dd>
+        </dl>
+        <h3>判断したこと</h3>
+        <ul>
+          <li>最初の1秒で主題を出す。静止画で確認したら「1 database.」が2.2秒まで出ていなかったので、0.45秒に早めた。</li>
+          <li>画と音が同じ時刻表を見るので、「split」と言った瞬間にデータベースが割れ、音も鳴る。</li>
+          <li>ナレーションはWhisperで聞き直して読み間違いを見つけ、字幕も1語ずつのタイミングに合わせる。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pair">
+      <div><video src="../media/short.mp4" poster="../media/short.jpg" controls preload="metadata" playsinline></video><div class="cap">縦型ショート。同じ元原稿から自動で書き出し。</div></div>
+      <div><video src="../media/making-of.mp4" poster="../media/making-of.jpg" controls preload="metadata" playsinline></video><div class="cap">メイキング：制作の流れ、台本1行の変更の前後、機械での検品、静止画で見つけた修正。</div></div>
+    </div>
+    <p class="fine">このポートフォリオのための自主制作です。PlanetScale社とは関係ありません。</p>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">02 · 実写 · AIに切らせる実験</div><h2>伊豆・達磨山</h2></div></div>
+    <div class="grid">
+      <video src="../media/mt-daruma.mp4" poster="../media/mt-daruma.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>形式</dt><dd>65秒・横・フランス語の会話に英語字幕</dd>
+          <dt>素材</dt><dd>1日分の手持ち映像35分。あえて景色を多めに撮影</dd>
+          <dt>担当</dt><dd>撮影は妻と2人。カットはAI、手で直したのは1か所だけ</dd>
+        </dl>
+        <h3>この実験でわかったこと</h3>
+        <ul>
+          <li>誰も喋っていない景色を、あえて多めに撮りました。話し声のない素材を、AIがどう切るかを見るためです。</li>
+          <li>声がある所は、AIはうまく切ります。独白は1語単位で整えられ、登りの映像の上にL字カットで流れていきます。</li>
+          <li>無音のカットは短すぎます。富士山が見える一番の見せ場が1.4秒。最後は360度ぐるっと回るカットの、始まりと終わりだけを残して真ん中を切ったので、つなぎ目の前後で景色が止まって見えていました。</li>
+          <li>手で直したのはそこだけです。回転は切らずに最後まで見せ、そのままフェードアウト。ほかはAIのカットのままです。チャンネルで公開した14分の本編も同じで、景色を少し伸ばしただけ。景色を何秒見せるかは、今も自分で決めています。</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">03 · ブランドの動き · YouTubeのイントロ</div><h2>Maison Uchi</h2></div></div>
+    <div class="grid">
+      <video src="../media/maison-uchi-intro.mp4" poster="../media/maison-uchi-intro.jpg" controls preload="metadata" playsinline></video>
+      <div class="notes">
+        <dl class="meta">
+          <dt>形式</dt><dd>11秒のイントロ＋最初のカットに溶ける12秒版（背景透過のProRes 4444）</dd>
+          <dt>担当</dt><dd>デザインの方向付け・動き・音楽</dd>
+        </dl>
+        <ul>
+          <li>チャンネルのデザインの方向性（新版画×1930年代フランスの旅行ポスター）の中で描いています。</li>
+          <li>拍に合わせて3人を紹介し、最後の和音でタイトルが決まる。</li>
+          <li>音楽は映像の長さぴったりに作っているので、最後に途中で切れない。</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="work"><div class="wrap">
+    <div class="head"><div><div class="mono">04 · ショート動画 · Instagram</div><h2>毎晩、撮って編集して投稿</h2></div>
+      <div class="links"><a href="https://www.instagram.com/reel/Df1hwITMc5n/">リールを見る ↗</a></div></div>
+    <div class="card">
+      <div class="stat">
+        <div><b>200K</b><span>再生</span></div>
+        <div><b>17.6%</b><span>スキップ率</span></div>
+        <div><b>340</b><span>保存</span></div>
+      </div>
+      <p style="margin:0;color:var(--soft)">日仏夫婦の日常のショート動画。撮影と編集は自分、出演は妻です。いちばん見ている数字はスキップ率。最初の1秒が、残りを見てもらえるかを決めるからです。</p>
+    </div>
+  </div></section>
+
+  <section class="work" id="process"><div class="wrap">
+    <div class="head"><div><div class="mono">進め方</div><h2>繰り返しはAIに。判断は自分で。</h2></div></div>
+    <div class="steps">
+      <div><h3>まず話の芯</h3><p>その作品が何の話かを1行か1枚の画で見つけ、そこに向かって切る。</p></div>
+      <div><h3>粗編集は速く</h3><p>全部を書き起こし、台本から素材と時刻を拾って、数分で組む。</p></div>
+      <div><h3>感覚の仕上げ</h3><p>無音のカットを何秒見せるか、何を捨てるか、言葉の間。声で切るのはAIが得意。ここはまだ自分の仕事。</p></div>
+      <div><h3>機械で検品</h3><p>要所の静止画、音量、聞き取りを、出す前に機械で確かめる。</p></div>
+    </div>
+  </div></section>
+
+  <section class="work" id="about"><div class="wrap about">
+    <div>
+      <div class="mono">経歴</div>
+      <h2 class="abh">前田健太郎</h2>
+      <p>鎌倉に住む映像編集者です。企業のPR映像を企画から納品まで5年間つくってきました。イベント、飲食店、アウトドア用品、アーティストや経営者の紹介映像など。そのうち1本はSNSで100万再生を超えました。</p>
+      <p>ダンサーとして20年、国内のフェスからカンボジアの路上まで踊ってきました。編集の「間」の感覚はここから来ています。FM湘南でラジオ番組も担当していて、会話を止めない間の取り方はそこで身につけました。</p>
+      <p>今は妻とフランス語・日本語のYouTubeチャンネルを運営しながら、Claude・Remotion・Pythonで自分の道具をつくっています。</p>
+    </div>
+    <div class="xp">
+      <div><b>フリーランス映像制作・編集</b><span>2020–2024</span></div>
+      <div><b>ラジオパーソナリティ（FM湘南）</b><span>現在</span></div>
+      <div><b>保育園の撮影担当</b><span>2016–2018</span></div>
+      <div><b>ダンサー · ムーンウォーク世界大会 特別賞</b><span>2025</span></div>
+      <div><b>Maison Uchi（YouTube・仏日）共同制作・編集</b><span>2026–</span></div>
+      <div><b>久留米大学 情報社会学科</b><span></span></div>
+      <p style="margin-top:18px"><a class="btn ghost" href="../media/Kentaro_Maeda_Resume.pdf">英文レジュメ（PDF）</a></p>
+    </div>
+  </div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <h2>最後まで見てもらえるものを、一緒に。</h2>
+  <a class="btn" href="mailto:ken.popopop@gmail.com">ken.popopop@gmail.com</a>
+  <a class="btn ghost" href="https://github.com/Maeken313">GitHub</a>
+  <a class="btn ghost" href="https://www.instagram.com/maeken_313/">Instagram</a>
+  <p class="fine">© 2026 前田健太郎。作品01は自主制作で、PlanetScale社とは関係ありません。</p>
+</div></footer>
+</body>
+</html>
